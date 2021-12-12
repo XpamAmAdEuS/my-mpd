@@ -1,0 +1,177 @@
+meson configure output/release -Dsysconfdir='/etc'
+
+meson configure output/release -Dadplug='disabled'
+meson configure output/release -Dalsa='enabled'
+meson configure output/release -Dao='disabled'
+meson configure output/release -Daudiofile='disabled'
+meson configure output/release -Dbzip2='disabled'
+meson configure output/release -Dcdio_paranoia='disabled'
+meson configure output/release -Dchromaprint='disabled'
+meson configure output/release -Dcue='false'
+meson configure output/release -Dcurl='disabled'
+meson configure output/release -Ddaemon='true'
+meson configure output/release -Ddatabase='true'
+meson configure output/release -Ddbus='disabled'
+meson configure output/release -Ddocumentation='false'
+meson configure output/release -Ddsd='false'
+meson configure output/release -Depoll='false'
+meson configure output/release -Deventfd='false'
+meson configure output/release -Dexpat='enabled'
+meson configure output/release -Dfaad='disabled'
+meson configure output/release -Dffmpeg='disabled'
+meson configure output/release -Dfifo='false'
+meson configure output/release -Dflac='enabled'
+meson configure output/release -Dfluidsynth='disabled'
+meson configure output/release -Dgme='disabled'
+meson configure output/release -Dhttpd='false'
+meson configure output/release -Diconv='disabled'
+meson configure output/release -Dicu='disabled'
+meson configure output/release -Did3tag='disabled'
+meson configure output/release -Dinotify='true'
+meson configure output/release -Dipv6='disabled'
+meson configure output/release -Diso9660='disabled'
+meson configure output/release -Djack='disabled'
+meson configure output/release -Dlame='disabled'
+meson configure output/release -Dlibmpdclient='disabled'
+meson configure output/release -Dlibsamplerate='disabled'
+meson configure output/release -Dlocal_socket='true'
+meson configure output/release -Dmad='disabled'
+meson configure output/release -Dmikmod='disabled'
+meson configure output/release -Dmms='disabled'
+meson configure output/release -Dmodplug='disabled'
+meson configure output/release -Dmpcdec='disabled'
+meson configure output/release -Dmpg123='enabled'
+meson configure output/release -Dneighbor='false'
+meson configure output/release -Dnfs='disabled'
+meson configure output/release -Dopenal='disabled'
+meson configure output/release -Dopus='disabled'
+meson configure output/release -Doss='disabled'
+meson configure output/release -Dpcre='disabled'
+meson configure output/release -Dpipe='false'
+meson configure output/release -Dpulse='enabled'
+meson configure output/release -Dqobuz='disabled'
+meson configure output/release -Drecorder='false'
+meson configure output/release -Dshine='disabled'
+meson configure output/release -Dshout='disabled'
+meson configure output/release -Dsidplay='disabled'
+meson configure output/release -Dsignalfd=false
+meson configure output/release -Dsmbclient='disabled'
+meson configure output/release -Dsndio='disabled'
+meson configure output/release -Dsolaris_output='disabled'
+meson configure output/release -Dsoundcloud='disabled'
+meson configure output/release -Dsoxr='disabled'
+meson configure output/release -Dsqlite='disabled'
+meson configure output/release -Dsyslog='disabled'
+meson configure output/release -Dtcp='true'
+meson configure output/release -Dtidal='disabled'
+meson configure output/release -Dtremor='disabled'
+meson configure output/release -Dtwolame='disabled'
+meson configure output/release -Dudisks='disabled'
+meson configure output/release -Dupnp='disabled'
+meson configure output/release -Dvorbis='disabled'
+meson configure output/release -Dvorbisenc='disabled'
+meson configure output/release -Dwave_encoder='false'
+meson configure output/release -Dwavpack='disabled'
+meson configure output/release -Dwebdav='disabled'
+meson configure output/release -Dwildmidi='disabled'
+meson configure output/release -Dyajl='disabled'
+meson configure output/release -Dzeroconf='disabled'
+meson configure output/release -Dzzip='disabled'
+meson configure output/release -Dzlib='disabled'
+
+
+meson . output/release --buildtype=debugoptimized -Db_ndebug=true
+
+./ninja -C output/release
+
+  adplug                                  auto                                      [enabled, disabled, auto]                 AdPlug decoder plugin
+  alsa                                    auto                                      [enabled, disabled, auto]                 ALSA support
+  android_abi                             armeabi-v7a                                                                         The Android ABI to be built
+  android_debug_keystore                                                                                                      The keystore file used to sign debug APK files
+  android_keyalias                                                                                                            The key alias used to sign APK files
+  android_keypass                                                                                                             The password of the keystore used to sign APK files
+  android_keystore                                                                                                            The keystore file used to sign APK files
+  android_ndk                                                                                                                 The path where Android NDK is installed
+  android_sdk                                                                                                                 The path where Android SDK is installed
+  android_strip                           strip                                                                               The "strip" tool from the NDK
+  ao                                      auto                                      [enabled, disabled, auto]                 libao output plugin
+  audiofile                               auto                                      [enabled, disabled, auto]                 libaudiofile decoder plugin
+  bzip2                                   auto                                      [enabled, disabled, auto]                 bzip2 support using libbz2
+  cdio_paranoia                           auto                                      [enabled, disabled, auto]                 libcdio_paranoia input plugin
+  chromaprint                             auto                                      [enabled, disabled, auto]                 ChromaPrint / AcoustID support
+  cue                                     true                                      [true, false]                             CUE sheet support
+  curl                                    auto                                      [enabled, disabled, auto]                 HTTP client using CURL
+  daemon                                  true                                      [true, false]                             enable daemonization
+  database                                true                                      [true, false]                             enable support for the music database
+  dbus                                    auto                                      [enabled, disabled, auto]                 D-Bus support
+  documentation                           false                                     [true, false]                             Build documentation
+  dsd                                     true                                      [true, false]                             Support the DSD audio format
+  epoll                                   true                                      [true, false]                             Use epoll on Linux
+  eventfd                                 true                                      [true, false]                             Use eventfd() on Linux
+  expat                                   auto                                      [enabled, disabled, auto]                 Expat XML support
+  faad                                    auto                                      [enabled, disabled, auto]                 AAC decoder using libfaad
+  ffmpeg                                  auto                                      [enabled, disabled, auto]                 FFmpeg codec support
+  fifo                                    true                                      [true, false]                             FIFO output plugin
+  flac                                    auto                                      [enabled, disabled, auto]                 FLAC decoder plugin
+  fluidsynth                              auto                                      [enabled, disabled, auto]                 fluidsynth MIDI decoder plugin
+  gme                                     auto                                      [enabled, disabled, auto]                 Game Music Emulator decoder plugin
+  httpd                                   true                                      [true, false]                             HTTP streaming output plugin
+  iconv                                   auto                                      [enabled, disabled, auto]                 Use iconv() for character set conversion
+  icu                                     auto                                      [enabled, disabled, auto]                 Use libicu for Unicode
+  id3tag                                  auto                                      [enabled, disabled, auto]                 ID3 support using libid3tag
+  inotify                                 true                                      [true, false]                             inotify support (for automatic database update)
+  ipv6                                    auto                                      [enabled, disabled, auto]                 Support for IPv6
+  iso9660                                 auto                                      [enabled, disabled, auto]                 ISO9660 support using libiso9660
+  jack                                    auto                                      [enabled, disabled, auto]                 JACK output plugin
+  lame                                    auto                                      [enabled, disabled, auto]                 LAME MP3 encoder plugin
+  libmpdclient                            auto                                      [enabled, disabled, auto]                 libmpdclient support (for the proxy database plugin)
+  libsamplerate                           auto                                      [enabled, disabled, auto]                 libsamplerate resampler
+  local_socket                            true                                      [true, false]                             Support for clients connecting via local sockets
+  mad                                     auto                                      [enabled, disabled, auto]                 MP3 decoder using libmad
+  mikmod                                  auto                                      [enabled, disabled, auto]                 MikMod decoder plugin
+  mms                                     auto                                      [enabled, disabled, auto]                 MMS protocol support using libmms
+  modplug                                 auto                                      [enabled, disabled, auto]                 Modplug decoder plugin
+  mpcdec                                  auto                                      [enabled, disabled, auto]                 Musepack decoder plugin
+  mpg123                                  auto                                      [enabled, disabled, auto]                 MP3 decoder using libmpg123
+  neighbor                                true                                      [true, false]                             enable support for neighbor discovery
+  nfs                                     auto                                      [enabled, disabled, auto]                 NFS protocol support using libnfs
+  openal                                  auto                                      [enabled, disabled, auto]                 OpenAL output plugin
+  opus                                    auto                                      [enabled, disabled, auto]                 Opus decoder plugin
+  oss                                     auto                                      [enabled, disabled, auto]                 Open Sound System support
+  pcre                                    auto                                      [enabled, disabled, auto]                 Enable regular expression support (using libpcre)
+  pipe                                    true                                      [true, false]                             Pipe output plugin
+  pulse                                   auto                                      [enabled, disabled, auto]                 PulseAudio support
+  qobuz                                   auto                                      [enabled, disabled, auto]                 Qobuz client
+  recorder                                true                                      [true, false]                             Recorder output plugin
+  shine                                   auto                                      [enabled, disabled, auto]                 shine MP3 encoder plugin
+  shout                                   auto                                      [enabled, disabled, auto]                 Shoutcast streaming support using libshout
+  sidplay                                 auto                                      [enabled, disabled, auto]                 C64 SID support via libsidplayfp or libsidplay2
+  signalfd                                true                                      [true, false]                             Use signalfd() on Linux
+  smbclient                               auto                                      [enabled, disabled, auto]                 SMB support using libsmbclient
+  sndfile                                 auto                                      [enabled, disabled, auto]                 libsndfile decoder plugin
+  sndio                                   auto                                      [enabled, disabled, auto]                 sndio output plugin
+  solaris_output                          auto                                      [enabled, disabled, auto]                 Solaris /dev/audio support
+  soundcloud                              auto                                      [enabled, disabled, auto]                 SoundCloud client
+  soxr                                    auto                                      [enabled, disabled, auto]                 libsoxr resampler
+  sqlite                                  auto                                      [enabled, disabled, auto]                 SQLite database support (for stickers)
+  syslog                                  auto                                      [enabled, disabled, auto]                 syslog support
+  systemd                                 auto                                      [enabled, disabled, auto]                 systemd support
+  systemd_system_unit_dir                                                                                                     systemd system service directory
+  systemd_user_unit_dir                                                                                                       systemd user service directory
+  tcp                                     true                                      [true, false]                             Support for clients connecting via TCP
+  test                                    false                                     [true, false]                             Build the unit tests and debug programs
+  tidal                                   auto                                      [enabled, disabled, auto]                 Tidal client
+  tremor                                  auto                                      [enabled, disabled, auto]                 Fixed-point vorbis decoder plugin
+  twolame                                 auto                                      [enabled, disabled, auto]                 TwoLAME MP2 encoder plugin
+  udisks                                  auto                                      [enabled, disabled, auto]                 Support for removable media using udisks2
+  upnp                                    auto                                      [enabled, disabled, auto]                 UPnP client support
+  vorbis                                  auto                                      [enabled, disabled, auto]                 Vorbis decoder plugin
+  vorbisenc                               auto                                      [enabled, disabled, auto]                 Vorbis encoder plugin
+  wave_encoder                            true                                      [true, false]                             PCM wave encoder encoder plugin
+  wavpack                                 auto                                      [enabled, disabled, auto]                 WavPack decoder plugin
+  webdav                                  auto                                      [enabled, disabled, auto]                 WebDAV support using CURL and Expat
+  wildmidi                                auto                                      [enabled, disabled, auto]                 WildMidi decoder plugin
+  yajl                                    auto                                      [enabled, disabled, auto]                 libyajl for YAML support
+  zeroconf                                auto                                      [auto, avahi, bonjour, disabled]          Zeroconf support
+  zlib                                    auto                                      [enabled, disabled, auto]                 zlib support (for database compression)
+  zzip                                    auto                                      [enabled, disabled, auto]                 ZIP support using zziplib
